@@ -12,12 +12,11 @@
 </head>
 
 <body>
-
     <!-- <audio controls="controls" id="applause" src="/src/audio/applause.mp3" type="audio/mp3">
     </audio>
     <audio controls="controls" id="applause" src="/src/audio/applause.mp3" type="audio/mp3">
     </audio> -->
-    <div class="w-screen h-screen bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+    <div class="w-screen h-screen bg-gradient-to-r from-yellow-300 to-pink-400">
         <div class="flex justify-center ">
             <h1 class="font-bold text-3xl mt-5 text-white">Random Picker 🎡</h1>
         </div>
@@ -32,26 +31,61 @@
                 </div>
             </div>
         </div>
-        <div class="flex justify-center mb-4 font-semibold text-lg text-white">
-            <h2>Try to add a name</h2>
+        <div class="flex justify-center mb-4 font-semibold text-lg  text-white">
+            <h2 class="drop-shadow-xl shadow-black">Add a name</h2>
         </div>
-
         <div class="w-full flex  justify-center items-center gap-3">
             <div class="w-1/5">
                 <input
-                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
-                    id="fullname" type="text" value="Jane Doe">
+                    class="bg-white appearance-none border-4 shadow-black shadow-md drop-shadow-xl border-black rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-pink-400"
+                    id="fullname" type="text" value="John Doe">
             </div>
             <div class="w-1/5">
                 <input
-                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                    class="bg-white appearance-none border-4 shadow-black shadow-md drop-shadow-xl border-black rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-pink-400"
                     id="brief" type="text" value="titre de sujet">
             </div>
-            <button class="p-3 flex items-center rounded-md bg-blue-500 text-white px-7 focus:scale-95" id="btnAdd">
-              
-                add
+            <button
+                class="p-2 w-8 h-8 justify-center hover:-translate-y-1 hover:border-yellow-400 border-4 border-black hover:scale-110 transition duration-500 rounded-full flex items-center text-xl font-bold  bg-white text-black  focus:scale-95"
+                id="btnAdd">
+                <span class="-mt-1 hover:text-yellow-400">
+                    +
+                </span>
             </button>
         </div>
+        
+        <div class="container flex justify-center m-5">
+            <table class="bg-white rounded-md p-4 border-b border-black">
+                <thead>
+                    <tr class="">
+                        <th>Full Name</th>
+                        <th>Subject</th>
+                        <th>Date</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody" >
+                    <tr class="px-5 py-5 border-b border-gray-200 ">
+                        <td>John Doe</td>
+                        <td>titre de sujet</td>
+                        <td>2021-10-10</td>
+                        <td>Not Picked</td>
+                        <td>
+                            <button class="bg-emerald-400 hover:bg-emerald-500 text-white font-bold py-1 px-4 rounded">
+                                Pick
+                            </button>   
+                    </tr>
+                    <tr class="px-5 py-5 border-b border-gray-200 ">
+                        <td>John Doe</td>
+                        <td>titre de sujet</td>
+                        <td>2021-10-10</td>
+                    </tr>
+                </tbody>
+
+            </table>
+        </div>
+
     </div>
 
 
