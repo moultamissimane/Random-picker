@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/src/images/spinner.jpg">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title> Random Picker 🎡</title>
+    <link rel="stylesheet" href="/src/style.css">
+</head>
+
+<body>
+
+    <!-- <audio controls="controls" id="applause" src="/src/audio/applause.mp3" type="audio/mp3">
+    </audio>
+    <audio controls="controls" id="applause" src="/src/audio/applause.mp3" type="audio/mp3">
+    </audio> -->
+    <div class="w-screen h-screen bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500">
+        <div class="flex justify-center ">
+            <h1 class="font-bold text-3xl mt-5 text-white">Random Picker 🎡</h1>
+        </div>
+        <div class="  grid grid-cols-8 m-2 ">
+            <!-- add overflow x scroll -->
+            <div id="picker"
+                class="flex  m-5 hover:-translate-y-1 hover:scale-110 transition duration-500  bg-white mt-10 rounded-lg w-40 h-40 shadow-md shadow-slate-400 ">
+                <div class="p-2">
+                    <p class="text-sm font-semibold">Full Name: </p>
+                    <p class="text-sm font-semibold">Subject: </p>
+                    <p class="text-sm font-semibold">Date: </p>
+                </div>
+            </div>
+        </div>
+        <div class="flex justify-center mb-4 font-semibold text-lg text-white">
+            <h2>Try to add a name</h2>
+        </div>
+
+        <div class="w-full flex  justify-center items-center gap-3">
+            <div class="w-1/5">
+                <input
+                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                    id="fullname" type="text" value="Jane Doe">
+            </div>
+            <div class="w-1/5">
+                <input
+                    class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
+                    id="brief" type="text" value="titre de sujet">
+            </div>
+            <button class="p-3 flex items-center rounded-md bg-blue-500 text-white px-7 focus:scale-95" id="btnAdd">
+              
+                add
+            </button>
+        </div>
+    </div>
+
+
+
+    <script type="module" src="./picker.js"></script>
+
+</body>
+
+</html>
