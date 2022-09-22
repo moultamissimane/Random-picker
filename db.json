@@ -3,99 +3,99 @@
       {
         "id": "91637587402049",
         "fullName": "Jane Doe",
-        "brief": "Title",
-        "status": "notChoosed",
+        "Subject": "Title",
+        "status": "notPicked",
         "date": ""
       },
       {
         "id": "11637587406621",
         "fullName": "aa",
-        "brief": "Title",
-        "status": "notChoosed",
+        "Subject": "Title",
+        "status": "notPicked",
         "date": ""
       },
       {
         "id": "31637587414858",
         "fullName": "aa",
-        "brief": "titre d",
-        "status": "notChoosed",
+        "Subject": "titre d",
+        "status": "notPicked",
         "date": ""
       },
       {
         "id": "41637587493607",
         "fullName": "Jane Doe",
-        "brief": "Title",
-        "status": "notChoosed",
+        "Subject": "Title",
+        "status": "notPicked",
         "date": ""
       },
       {
         "id": "31637587493767",
         "fullName": "Jane Doe",
-        "brief": "Title",
-        "status": "notChoosed",
+        "Subject": "Title",
+        "status": "notPicked",
         "date": ""
       },
       {
         "id": "71637587493933",
         "fullName": "Jane Doe",
-        "brief": "Title",
-        "status": "notChoosed",
+        "Subject": "Title",
+        "status": "notPicked",
         "date": ""
       },
       {
         "id": "21637587494313",
         "fullName": "Jane Doe",
-        "brief": "Title",
-        "status": "notChoosed",
+        "Subject": "Title",
+        "status": "notPicked",
         "date": ""
       },
       {
         "id": "11637587494480",
         "fullName": "Jane Doe",
-        "brief": "Title",
-        "status": "choosed",
+        "Subject": "Title",
+        "status": "Picked",
         "date": ""
       },
       {
         "id": "81637587494664",
         "fullName": "Jane Doe",
-        "brief": "Title",
-        "status": "notChoosed",
+        "Subject": "Title",
+        "status": "notPicked",
         "date": ""
       },
       {
         "id": "61637589278280",
         "fullName": "Jane Doe",
-        "brief": "Title",
-        "status": "notChoosed",
+        "Subject": "Title",
+        "status": "notPicked",
         "date": ""
       },
       {
         "id": "91637590543438",
         "fullName": "Jane Doe",
-        "brief": "Title",
-        "status": "notChoosed",
+        "Subject": "Title",
+        "status": "notPicked",
         "date": ""
       },
       {
         "id": "61637592719708",
         "fullName": "Jane Doe",
-        "brief": "Title",
-        "status": "notChoosed",
+        "Subject": "Title",
+        "status": "notPicked",
         "date": ""
       },
       {
         "id": "51663754203574",
         "fullName": "Jane Doeazeaze",
-        "brief": "Titlesqdqsdf",
-        "status": "notChoosed",
+        "Subject": "Titlesqdqsdf",
+        "status": "notPicked",
         "date": ""
       },
       {
         "id": "91663754313738",
         "fullName": "Jane Doe",
-        "brief": "Title",
-        "status": "notChoosed",
+        "Subject": "Title",
+        "status": "notPicked",
         "date": ""
       }
     ]

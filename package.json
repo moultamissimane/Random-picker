@@ -3,6 +3,7 @@
     "tailwindcss": "^3.1.8"
   },
   "dependencies": {
-    "@mui/icons-material": "^5.10.6"
+    "@mui/icons-material": "^5.10.6",
+    "json-server": "^0.17.0"
   }
 }

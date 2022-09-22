@@ -20,30 +20,31 @@
         <div class="flex justify-center ">
             <h1 class="font-bold text-3xl mt-5 text-white">Random Picker 🎡</h1>
         </div>
-        <div class="  grid grid-cols-8 m-2 ">
+        <div class="grid grid-cols-8 m-2 ">
             <!-- add overflow x scroll -->
             <div id="picker"
                 class="flex  m-5 hover:-translate-y-1 hover:scale-110 transition duration-500  bg-white mt-10 rounded-lg w-40 h-40 shadow-md shadow-slate-400 ">
                 <div class="p-2">
                     <p class="text-sm font-semibold">Full Name: </p>
                     <p class="text-sm font-semibold">Subject: </p>
-                    <p class="text-sm font-semibold">Date: </p>
                 </div>
             </div>
         </div>
-        <div class="flex justify-center mb-4 font-semibold text-lg  text-white">
-            <h2 class="drop-shadow-xl shadow-black">Add a name</h2>
+        <div class="flex justify-center mb-4 font-semibold text-2xl  text-white">
+            <h2 class="title-word title-word-1  drop-shadow-xl shadow-black">ADD &nbsp;</h2>
+            <h2 class="title-word title-word-2 drop-shadow-xl shadow-black">YOUR &nbsp;</h2>
+            <h2 class="title-word title-word-3 drop-shadow-xl shadow-black">NAME</h2>
         </div>
         <div class="w-full flex  justify-center items-center gap-3">
             <div class="w-1/5">
                 <input
                     class="bg-white appearance-none border-4 shadow-black shadow-md drop-shadow-xl border-black rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-pink-400"
-                    id="fullname" type="text" value="John Doe">
+                    id="fullname" type="text" placeholder="Full Name" value="John Doe">
             </div>
             <div class="w-1/5">
                 <input
                     class="bg-white appearance-none border-4 shadow-black shadow-md drop-shadow-xl border-black rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-pink-400"
-                    id="brief" type="text" value="titre de sujet">
+                    id="brief" type="text" placeholder="Subject" value="Subject">
             </div>
             <button
                 class="p-2 w-8 h-8 justify-center hover:-translate-y-1 hover:border-yellow-400 border-4 border-black hover:scale-110 transition duration-500 rounded-full flex items-center text-xl font-bold  bg-white text-black  focus:scale-95"
@@ -53,36 +54,61 @@
                 </span>
             </button>
         </div>
-        
-        <div class="container flex justify-center m-5">
-            <table class="bg-white rounded-md p-4 border-b border-black">
+
+        <div class="container flex overflow-y-scroll max-h-96 justify-center m-10 ml-32">
+            <table class="bg-white rounded-md shadow-lg table-fixed  shadow-black p-4 border-b border-black">
                 <thead>
                     <tr class="">
-                        <th>Full Name</th>
-                        <th>Subject</th>
-                        <th>Date</th>
-                        <th>Status</th>
-                        <th>Action</th>
+                        <th class="px-5 py-3 uppercase">Full Name</th>
+                        <th class="px-5 py-3 uppercase">Subject</th>
+                        <th class="px-5 py-3 uppercase">Date</th>
+                        <th class="px-5 py-3 uppercase">Status</th>
+                        <th class="px-5 py-3 uppercase">Action</th>
                     </tr>
                 </thead>
-                <tbody id="tableBody" >
-                    <tr class="px-5 py-5 border-b border-gray-200 ">
-                        <td>John Doe</td>
-                        <td>titre de sujet</td>
-                        <td>2021-10-10</td>
-                        <td>Not Picked</td>
-                        <td>
-                            <button class="bg-emerald-400 hover:bg-emerald-500 text-white font-bold py-1 px-4 rounded">
-                                Pick
-                            </button>   
-                    </tr>
-                    <tr class="px-5 py-5 border-b border-gray-200 ">
-                        <td>John Doe</td>
-                        <td>titre de sujet</td>
-                        <td>2021-10-10</td>
-                    </tr>
-                </tbody>
+                <tbody id="tableContent" class="divide-x-2">
+                    <!-- <tr class="p-3 border-t border-black">
+                        <td class="px-4 py-4 text-base border-b border-gray-200 bg-white ">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0">
+                                    <p>John Doe </p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-4 py-4 border-b border-gray-200 bg-white text-base">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0">
+                                    <p>subject title</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-4 py-4 border-b border-gray-200 bg-white text-base">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0">
+                                    <p>subject title</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-4 py-4 border-b border-gray-200 bg-white text-base">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0">
+                                    <p>subject title</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="px-4 py-4 border-b border-gray-200 bg-white text-base">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0">
+                                    <button class="bg-emerald-400 hover:bg-emerald-500 text-white font-bold py-1 px-4 rounded">
+                                        Pick
+                                    </button>
+                                </div>
+                            </div>
+                        </td>
 
+                    </tr> -->
+                    
+                </tbody>
             </table>
         </div>
 
