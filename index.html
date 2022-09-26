@@ -9,6 +9,19 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <title> Random Picker 🎡</title>
     <link rel="stylesheet" href="/src/style.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $("#datePickerInput").datepicker({
+                defaultDate: "+1w",
+                changeMonth: true,
+                numberOfMonths: 1,
+                beforeShowDay: $.datepicker.noWeekends
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -24,11 +37,16 @@
             <!-- add overflow x scroll -->
             <div id="picker"
                 class="flex  m-5 hover:-translate-y-1 hover:scale-110 transition duration-500  bg-white mt-10 rounded-lg w-40 h-40 shadow-md shadow-slate-400 ">
-                <div class="p-2">
+                <!-- <div class="p-2">
                     <p class="text-sm font-semibold">Full Name: </p>
                     <p class="text-sm font-semibold">Subject: </p>
-                </div>
+                </div> -->
             </div>
+        </div>
+        <div class="flex justify-center ">
+            <input type="text" id="spinnerWinnerId" class="bg-white px-3 py-1 rounded-lg" />
+            <h4 id="spinnerWinner">Spin !</h4>
+
         </div>
         <div class="flex justify-center mb-4 font-semibold text-2xl  text-white">
             <h2 class="title-word title-word-1  drop-shadow-xl shadow-black">ADD &nbsp;</h2>
@@ -66,7 +84,7 @@
                         <th class="px-5 py-3 uppercase">Action</th>
                     </tr>
                 </thead>
-                <tbody id="tableContent" class="divide-x-2">
+                <tbody  class="tableContent divide-x-2">
                     <!-- <tr class="p-3 border-t border-black">
                         <td class="px-4 py-4 text-base border-b border-gray-200 bg-white ">
                             <div class="flex items-center">
@@ -107,7 +125,7 @@
                         </td>
 
                     </tr> -->
-                    
+
                 </tbody>
             </table>
         </div>
@@ -117,6 +135,8 @@
 
 
     <script type="module" src="./picker.js"></script>
+    <script type="module" src="./Students.js"></script>
+    <script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/datepicker.bundle.js"></script>
 
 </body>
 
