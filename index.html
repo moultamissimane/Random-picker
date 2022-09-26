@@ -13,6 +13,7 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script type="text/javascript" src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript">
+        // a jquery method to make the input field a datepicker
         $(function () {
             $("#datePickerInput").datepicker({
                 defaultDate: "+1w",
@@ -24,28 +25,24 @@
     </script>
 </head>
 
-<body class="w-screen h-screen bg-gradient-to-r from-yellow-300 to-pink-400">
-    <!-- <audio controls="controls" id="applause" src="/src/audio/applause.mp3" type="audio/mp3">
-    </audio>
-    <audio controls="controls" id="applause" src="/src/audio/applause.mp3" type="audio/mp3">
-    </audio> -->
+<body class="w-screen h-screen bg-gradient-to-r from-rose-300 to-fuchsia-300">
     <div class="">
         <div class="flex justify-center ">
-            <h1 class="font-bold text-3xl my-2  text-white">Random Picker 🎡</h1>
+            <h1 class="font-bold text-3xl  text-white">Random Picker 🎡</h1>
         </div>
         <div class="flex justify-center ">
-            <button id="btnSpinner" class="bg-red-400 font-semibold text-lg hover:-translate-y-1 hover:scale-110 transition duration-500 hover:shadow-red-600 hover:border-red-600 hover:border-2 hover:shadow-md text-white px-8 rounded-md mr-3">
+            <button id="btnSpinner" class="bg-pink-500 font-semibold text-lg hover:-translate-y-1 hover:scale-110 transition duration-500 hover:shadow-yellow-400 hover:border-yellow-400 hover:border-2 hover:shadow-sm text-white px-8 rounded-md mr-3">
                 Click me!
             </button>
         </div>  
-        <div class="grid grid-cols-4 m-2 ">
-            <div class="" id="picker">
+        <div class="">
+            <div class="flex overflow-x-auto" id="picker">
 
             </div>
         </div>
         <div class="flex justify-center ">
             <input type="hidden" id="spinnerWinnerId" />
-            <h4 id="spinnerWinner" class="bg-white px-6 py-1 rounded-lg mb-3">Spin !</h4>
+            <h4 id="spinnerWinner" class="bg-white px-6 py-1 rounded-lg mt-2 mb-2">Spin !</h4>
         </div>
         <div class="flex justify-center mb-3 transition-none">
             <div class="bg-white rounded-lg">
@@ -57,11 +54,6 @@
                 </button>
             </div>
         </div>
-        <!-- <div class="flex justify-center mb-4 font-semibold text-2xl  text-white">
-            <h2 class="title-word title-word-1 drop-shadow-xl shadow-black">ADD &nbsp;</h2>
-            <h2 class="title-word title-word-2 drop-shadow-xl shadow-black">YOUR &nbsp;</h2>
-            <h2 class="title-word title-word-3 drop-shadow-xl shadow-black">NAME</h2>
-        </div> -->
         <div class="w-full flex  justify-center items-center gap-3">
             <div class="w-1/5">
                 <input
@@ -81,7 +73,7 @@
                 </span>
             </button>
         </div>
-        <div class="container w-full flex ml-20 rounded-md mt-5  overflow-y-scroll  max-h-64">
+        <div class="container w-full flex ml-44 rounded-md mt-5  overflow-y-scroll  max-h-64">
             <table class="table-fixed rounded-md bg-white w-full  overflow-hidden text-black">
                 <thead>
                     <tr>

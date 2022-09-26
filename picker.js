@@ -16,27 +16,26 @@ const render = async (elements) => {
       arr.push(element.id);
     }
   });
-
+// returns a random element of the array
   random = arr[Math.floor(Math.random() * arr.length)];
   let randomElement = elements.find((element) => element.id === random);
   randomElement.style = "transform: scale(1.3)";
   await elements.map((e) => {
     if (e.status === "notChoosed") {
       var newPick = document.createElement("div");
-      newPick.classList.add("scale-50");
-      newPick.classList.add("w-48");
-      newPick.classList.add("nodeChildrenSpinner");
-
+      newPick.classList.add("w-76");
+      newPick.classList.add("gap-6");
+      // newPick.classList.add("nodeChildrenSpinner");
       newPick.innerHTML = `
-            <div class=" w-48 rounded-lg px-4 h-96 scale-50 text-base  shadow-sm p-3 ${
-              e.id == random ? "bg-red-600 text-white h-52 -mt-2" : "bg-white"
-            } ${e.status != "notChoosed" ? "bg-gray-200" : ""}" id="id_${
-        e.id
-      }" >
-            <h3 class="text-2xl font-semibold items-baseline whitespace-nowrap">${
+            <div class="overflow-hidden bg-white text-black shadow-sm shadow-white w-72 rounded-xl h-64  scale-50  font-bold  ${
+              e.id == random
+                ? "bg-pink-400 text-white hover:-translate-y-1 border-4 border-fuschia-500 hover:scale-75 transition duration-500 hover:shadow-pink-700 hover:border-pink-700 hover:border-2 hover:shadow-md"
+                : "bg-white"
+            } ${e.status != "notChoosed" ? "bg-red-300" : ""}" id="id_${e.id}" >
+            <h3 class="text-4xl mt-4 text-center font-bold items-baseline whitespace-nowrap">${
               e.fullName
             }</h3>
-            <p>${e.subject}</p>
+            <p class="text-3xl text-center">${e.subject}</p>
             ${
               e.status != "notChoosed"
                 ? '<hr class="border-white"/><p class="text-black mt-2">' +
@@ -60,23 +59,23 @@ const scrollToElement = (id) => {
   let parentPos = document.getElementById("picker").offsetLeft;
 
   picker.scrollTo({
-    left: childrenPos - parentPos - 150,
+    left: childrenPos - parentPos - 100,
     behavior: "smooth",
   });
 };
 
 picker.addEventListener("scroll", () => {
   let nodeChildren = document.querySelectorAll("nodeChildrenSpinner");
-  var audio = new Audio("./slide-sound-effect.mp3");
+  var audio = new Audio("/src/audios/slide-sound-effect.mp3");
   nodeChildren.forEach((e) => {
-    if (e.offsetLeft < picker.scrollLeft + picker.clientWidth) {
+    if (e.offsetRight < picker.scrollLeft + picker.clientWidth) {
       //scale
       audio.play();
       e.style.transform = `scale(0.2)`;
-      e.style.transition = `transform 0.5s`;
+      e.style.transition = `transform 1s`;
     } else {
       //scale
-      e.style.transform = `scale(0.9)`;
+      e.style.transform = `scale(1)`;
       e.style.transition = `transform 0.5s`;
     }
   });
@@ -87,6 +86,7 @@ var elements = fetchElements();
 
 //add event listener to randomize button
 const randomizeButton = document.querySelector("#btnSpinner");
+
 randomizeButton.addEventListener("click", fetchElements);
 
 fetchElements();
