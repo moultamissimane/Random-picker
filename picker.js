@@ -1,14 +1,15 @@
-var picker = document.getElementById("#picker");
+var picker = document.querySelector("#picker");
 let random;
 
-const fetchData = async () => {
-  const response = await fetch(" http://localhost:3000/Data");
+const fetchElements = async () => {
+  const response = await fetch(" http://localhost:3000/elements");
   const data = await response.json();
+  await render(data);
   return data;
 };
 
 const render = async (elements) => {
-  spinner.innerHTML = "";
+  picker.innerHTML = "";
   let arr = [];
   elements.forEach((element) => {
     if (element.status === "notChoosed") {
@@ -16,19 +17,18 @@ const render = async (elements) => {
     }
   });
 
-//arr random
   random = arr[Math.floor(Math.random() * arr.length)];
   let randomElement = elements.find((element) => element.id === random);
   randomElement.style = "transform: scale(1.3)";
   await elements.map((e) => {
     if (e.status === "notChoosed") {
-      var newSpin = document.createElement("div");
-      newSpin.classList.add("scale-50");
-      newSpin.classList.add("w-48");
-      newSpin.classList.add("nodeChildrenSpinner");
+      var newPick = document.createElement("div");
+      newPick.classList.add("scale-50");
+      newPick.classList.add("w-48");
+      newPick.classList.add("nodeChildrenSpinner");
 
-      newSpin.innerHTML = `
-            <div class="flex w-48 rounded-lg px-4 h-48 scale-50 text-base flex-col shadow-sm p-3 ${
+      newPick.innerHTML = `
+            <div class=" w-48 rounded-lg px-4 h-96 scale-50 text-base  shadow-sm p-3 ${
               e.id == random ? "bg-red-600 text-white h-52 -mt-2" : "bg-white"
             } ${e.status != "notChoosed" ? "bg-gray-200" : ""}" id="id_${
         e.id
@@ -36,7 +36,7 @@ const render = async (elements) => {
             <h3 class="text-2xl font-semibold items-baseline whitespace-nowrap">${
               e.fullName
             }</h3>
-            <p>${e.brief}</p>
+            <p>${e.subject}</p>
             ${
               e.status != "notChoosed"
                 ? '<hr class="border-white"/><p class="text-black mt-2">' +
@@ -49,7 +49,7 @@ const render = async (elements) => {
       document.getElementById("spinnerWinner").innerHTML =
         randomElement.fullName;
       document.getElementById("spinnerWinnerId").value = randomElement.id;
-      spinner.appendChild(newSpin);
+      picker.appendChild(newPick);
     }
   });
   scrollToElement(randomElement.id);
@@ -57,7 +57,7 @@ const render = async (elements) => {
 
 const scrollToElement = (id) => {
   let childrenPos = document.getElementById("id_" + id).offsetLeft;
-  let parentPos = document.getElementById("pickerg").offsetLeft;
+  let parentPos = document.getElementById("picker").offsetLeft;
 
   picker.scrollTo({
     left: childrenPos - parentPos - 150,
@@ -67,7 +67,7 @@ const scrollToElement = (id) => {
 
 picker.addEventListener("scroll", () => {
   let nodeChildren = document.querySelectorAll("nodeChildrenSpinner");
-  var audio = new Audio("./Mouse.mp3");
+  var audio = new Audio("./slide-sound-effect.mp3");
   nodeChildren.forEach((e) => {
     if (e.offsetLeft < picker.scrollLeft + picker.clientWidth) {
       //scale

@@ -59,51 +59,20 @@ const deleteElements = async (element) => {
 // render the elements
 const render = (elements) => {
   tableContent.innerHTML = "";
-  var newTr = document.createElement("tr");
   elements.map((e, idx) => {
-    tableContent.innerHTML = `
-    <tr class="p-3 border-t border-black">
-      <td class="px-4 py-4 text-base border-b border-gray-200 bg-white ">
-         <div class="flex items-center">
-            <div class="flex-shrink-0">
-                <p>${e.fullName} </p>
-            </div>
-      </div>
-      </td>
-      <td class="px-4 py-4 text-base border-b border-gray-200 bg-white ">
-         <div class="flex items-center">
-            <div class="flex-shrink-0">
-                <p>${e.subject} </p>
-            </div>
-      </div>
-      </td>
-      <td class="px-4 py-4 text-base border-b border-gray-200 bg-white ">
-         <div class="flex items-center">
-            <div class="flex-shrink-0">
-                <p>${e.status !== "notPicked" ? e.status : "Not yet"} </p>
-            </div>
-      </div>
-      </td>
-      <td class="px-4 py-4 text-base border-b border-gray-200 bg-white ">
-         <div class="flex items-center">
-            <div class="flex-shrink-0">
-                <p>${e.date} </p>
-            </div>
-      </div>
-      </td>
-      <td class="px-4 py-4 border-b border-gray-200 bg-white text-base">
-        <div class="flex items-center">
-            <div class="flex-shrink-0">
-                <button id="${
-                  e.id
-                } class="bg-red-400 hover:bg-red-600 text-white font-bold py-1 px-4 rounded">
-                    Repeat
-                </button>
-            </div>
-        </div>
-      </td>
-    </tr>
-    `;
+    var newTr = document.createElement("tr");
+    newTr.classList.add("hover:bg-yellow-100");
+    newTr.innerHTML = `
+    <td  class="divide-y-2 text-center text-black">${e.fullName}</td>
+    <td class="text-center text-black">${e.subject}</td>
+    <td class="text-center text-black">${
+      e.status !== "notChoosed" ? e.status : "not yet"
+    }</td>
+        <td class="text-center text-black">${e.date}</td>
+        <td class="p-2">
+        <button class="p-1 rounded-md bg-pink-400 text-white px-3 focus:scale-95 buttonRepeat" id="${e.id}">Reset</button>
+        </td>
+        `;
     tableContent.appendChild(newTr);
   });
   console.log(elements);
